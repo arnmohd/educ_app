@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @syllabus.name %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @syllabus.course_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_syllabus_path(@syllabus) %> |
+<%= link_to 'Back', syllabuses_path %>

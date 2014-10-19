@@ -1,0 +1,25 @@
+development:
+  
+      host: localhost
+      adapter: postgresql
+      database: postgres
+      username: postgres
+      password: postgres123
+
+
+test: &test
+  
+      host: localhost
+      adapter: postgresql
+      database: educapp_testdb
+      username: postgres
+      password: postgres123
+
+
+production:
+  
+      host: localhost
+      adapter: postgresql
+      database: educapp_proddb
+      username: postgres
+      password: postgres123
