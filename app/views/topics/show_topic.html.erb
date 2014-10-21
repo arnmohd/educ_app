@@ -1,11 +1,16 @@
-<h1>Listing topics</h1>
-
+<center>
+<h3><%=@course.name %> </h3>
+<p></p>
+<h3>Subject: <%=@syllabus.name %> </h3>
+<p></p>
+<h3> Syllabus for - <%=@chapter.name %> </h3>
+<p></p>
+<h3> <%=@header.heading %> </h3>
+<p></p>
+<p></p>
+<div style="padding-top:3%;">
 <table>
-  <tr>
-    
-    <th>Content</th>
-   
-  </tr>
+  
 
 <% @topics.each do |topic| %>
   <tr>
@@ -15,7 +20,7 @@
   </tr>
 <% end %>
 </table>
-
+</center>
 <br />
 
 
@@ -24,13 +29,7 @@
  
     
    
-  <% if @topic %> 
-       <h1>Great</h1>
-    <%= @topic[2] %>
-    
-  <% else %>
-      <h1>Topics</h1>
-   <%end %>
+ 
   
   
 

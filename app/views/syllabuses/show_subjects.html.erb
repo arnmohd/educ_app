@@ -1,14 +1,14 @@
-<h1>Listing Subjects</h1>
+
+<center>
+<h3><%=@course.name %> </h3>
+<p></p>
+<h4>Subjects</h4>
+
+
        
-
+<div style="padding-top:3%">
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+  
 <% @syllabuses.each do |syllabus| %>
   <tr>
     <td><%= link_to syllabus.name, show_syllabus_path(:course_id => syllabus.course_id,:syllabus_id=> syllabus.id)%></td>
@@ -16,3 +16,5 @@
   </tr>
 <% end %>
 </table>
+<div/>
+</center>

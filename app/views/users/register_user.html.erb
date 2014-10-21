@@ -1,0 +1,29 @@
+<center>
+<div>
+<h3>Sign Up</h3>
+</div>
+<div style="padding-top: 5%">
+<%= form_for @user, :as => :user, :url => register_user_path do |f| %>
+   <div class="field">
+    <%= f.label :Username %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :role_id %>
+    <%= f.number_field :role_id %>
+  </div>
+  <div class="actions">
+      <%= f.submit 'Sign Up' %>&nbsp;&nbsp;&nbsp;
+      <%= f.submit 'Clear Form', :type => 'reset' %>
+  </div>
+  <% end %>
+</div>
+</center>

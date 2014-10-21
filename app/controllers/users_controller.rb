@@ -1,6 +1,38 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  
+  def sign_in
+    @user = User.new
+  end
+
+  def login
+   email       = params[:user][:email]
+   password    = params[:user][:password]
+   user = User.find_by_email(email)
+         if user && (user.password == password)
+          redirect_to  :show_courses
+         else 
+            redirect_to :sign_in
+         end
+   end
+   
+   def register_user
+    @user = User.new
+  end
+
+   def register
+      @user = User.new(params[:user])
+      if @user.save
+         redirect_to :sign_in
+      else
+         redirect_to :register_user
+         
+      end
+   end
+   
+
+ 
   def index
     @users = User.all
 
@@ -9,6 +41,9 @@ class UsersController < ApplicationController
       format.json { render json: @users }
     end
   end
+  
+ 
+ 
 
   # GET /users/1
   # GET /users/1.json
@@ -20,6 +55,8 @@ class UsersController < ApplicationController
       format.json { render json: @user }
     end
   end
+  
+ 
 
   # GET /users/new
   # GET /users/new.json
@@ -80,4 +117,5 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

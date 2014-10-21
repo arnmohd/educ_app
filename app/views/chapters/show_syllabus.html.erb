@@ -1,13 +1,13 @@
-<h1>Listing Syllabus</h1>
+<center>
+<h3><%=@course.name %> </h3>
+<p></p>
+<h3>Subject: <%=@syllabus.name %> </h3>
+<p></p>
+<h4>Syllabus</h4>
 
+<div style="padding-top:3%;">
 <table>
-  <tr>
-    <th>Topic</th>
-   
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+ 
 
 <% @chapters.each do |chapter| %>
   <tr>
@@ -16,7 +16,8 @@
   </tr>
 <% end %>
 </table>
-
+<div/>
+</center>
 <br />
 
 

@@ -19,19 +19,12 @@ EducApp::Application.routes.draw do
 
   resources :institutions
   
-  #resources :courses do
-  #resources :syllabuses
-#end
-
- 
-  
-
-  
   root :to=>"home#index"
-  get "signed_out" => "authentication#signed_out"
-  get "new_user" => "authentication#new_user"
-  get "sign_in" => "authentication#sign_in"
-  post "sign_in" => "authentication#login"
+  
+  get "sign_in" => "users#sign_in"
+  post "sign_in" => "users#login"
+  get  "register_user" => "users#register_user"
+  post "register_user" => "users#register"
   
   get "show_courses"  => "courses#show_courses"
   get "show_subjects" => "syllabuses#show_subjects"
