@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141018155753) do
+ActiveRecord::Schema.define(:version => 20141020184236) do
 
   create_table "chapters", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20141018155753) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "headers", :force => true do |t|
+    t.string   "heading"
+    t.integer  "course_id"
+    t.integer  "syllabus_id"
+    t.integer  "chapter_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "headers", ["course_id", "syllabus_id", "chapter_id"], :name => "index_headers_on_course_id_and_syllabus_id_and_chapter_id"
 
   create_table "institutions", :force => true do |t|
     t.string   "name"
@@ -64,16 +75,14 @@ ActiveRecord::Schema.define(:version => 20141018155753) do
   add_index "syllabuses", ["course_id"], :name => "index_syllabuses_on_course_id"
 
   create_table "topics", :force => true do |t|
-    t.string   "heading"
     t.text     "content"
     t.integer  "course_id"
     t.integer  "syllabus_id"
     t.integer  "chapter_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "header_id"
   end
-
-  add_index "topics", ["course_id", "syllabus_id", "chapter_id"], :name => "index_topics_on_course_id_and_syllabus_id_and_chapter_id"
 
   create_table "user_course_relations", :force => true do |t|
     t.integer  "user_id"

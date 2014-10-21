@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Heading:</b>
+  <%= @header.heading %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @header.course_id %>
+</p>
+
+<p>
+  <b>Syllabus:</b>
+  <%= @header.syllabus_id %>
+</p>
+
+<p>
+  <b>Chapter:</b>
+  <%= @header.chapter_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_header_path(@header) %> |
+<%= link_to 'Back', headers_path %>

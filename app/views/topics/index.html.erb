@@ -2,11 +2,12 @@
 
 <table>
   <tr>
-    <th>Heading</th>
+    
     <th>Content</th>
     <th>Course</th>
     <th>Syllabus</th>
     <th>Chapter</th>
+    <th>Header</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +15,12 @@
 
 <% @topics.each do |topic| %>
   <tr>
-    <td><%= topic.heading %></td>
+    
     <td><%= topic.content %></td>
     <td><%= topic.course_id %></td>
     <td><%= topic.syllabus_id %></td>
     <td><%= topic.chapter_id %></td>
+    <td><%= topic.header_id %></td>
     <td><%= link_to 'Show', topic %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, confirm: 'Are you sure?', method: :delete %></td>

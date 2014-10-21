@@ -4,5 +4,6 @@ class Syllabus < ActiveRecord::Base
   validates :course_id, presence: true
   belongs_to :courses
   has_many :chapters, dependent: :destroy
+  has_many :headers, dependent: :destroy
   has_many :topics, dependent: :destroy
 end

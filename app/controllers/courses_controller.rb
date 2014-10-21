@@ -2,6 +2,10 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   
+ 
+  def show_courses
+    @courses = Course.all
+  end
   
   def index
     @courses = Course.all

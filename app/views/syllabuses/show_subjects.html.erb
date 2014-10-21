@@ -1,0 +1,18 @@
+<h1>Listing Subjects</h1>
+       
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @syllabuses.each do |syllabus| %>
+  <tr>
+    <td><%= link_to syllabus.name, show_syllabus_path(:course_id => syllabus.course_id,:syllabus_id=> syllabus.id)%></td>
+ 
+  </tr>
+<% end %>
+</table>

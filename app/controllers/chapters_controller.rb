@@ -1,6 +1,13 @@
 class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
+  
+  def show_syllabus
+     @course = Course.find(params[:course_id])
+     @syllabus = Syllabus.find(params[:syllabus_id])
+     @chapters = Chapter.where(course_id: @course.id, syllabus_id: @syllabus.id)
+  end
+  
   def index
     @chapters = Chapter.all
 

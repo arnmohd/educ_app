@@ -1,6 +1,13 @@
 class SyllabusesController < ApplicationController
   # GET /syllabuses
   # GET /syllabuses.json
+  
+   def show_subjects
+       @course = Course.find(params[:course_id])
+       @syllabuses = Syllabus.where(course_id: @course.id)
+   end
+  
+   
   def index
     @syllabuses = Syllabus.all
 

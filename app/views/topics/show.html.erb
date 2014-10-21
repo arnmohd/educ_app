@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Heading:</b>
-  <%= @topic.heading %>
-</p>
+
 
 <p>
   <b>Content:</b>
@@ -24,6 +21,12 @@
   <b>Chapter:</b>
   <%= @topic.chapter_id %>
 </p>
+
+<p>
+  <b>Header:</b>
+  <%= @topic.header_id %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |

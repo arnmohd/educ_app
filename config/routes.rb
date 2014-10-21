@@ -1,4 +1,6 @@
 EducApp::Application.routes.draw do
+  resources :headers
+
   resources :people
 
   resources :user_course_relations
@@ -17,13 +19,27 @@ EducApp::Application.routes.draw do
 
   resources :institutions
   
+  #resources :courses do
+  #resources :syllabuses
+#end
+
+ 
+  
+
+  
   root :to=>"home#index"
   get "signed_out" => "authentication#signed_out"
   get "new_user" => "authentication#new_user"
   get "sign_in" => "authentication#sign_in"
   post "sign_in" => "authentication#login"
   
-  post "show_courses" => "authentication#show_courses"
+  get "show_courses"  => "courses#show_courses"
+  get "show_subjects" => "syllabuses#show_subjects"
+  get "show_syllabus" => "chapters#show_syllabus"
+  get "show_headers"  =>  "headers#show_headers"
+  get "show_topic"    => "topics#show_topic"  
+  
+ # match 'courses/:course_id/syllabuses' => 'syllabuses#show_subjects'
  
 end
   

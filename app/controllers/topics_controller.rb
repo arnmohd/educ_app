@@ -1,6 +1,16 @@
 class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
+  
+  def show_topic
+     @course   =    Course.find(params[:course_id])
+     @syllabus =    Syllabus.find(params[:syllabus_id])
+     @chapter  =    Chapter.find(params[:chapter_id])
+     @header   =    Header.find(params[:header_id])
+     @topics    =   Topic.where(course_id: @course.id, syllabus_id: @syllabus.id, chapter_id: @chapter.id, header_id: @header.id)
+  end
+  
+  
   def index
     @topics = Topic.all
 

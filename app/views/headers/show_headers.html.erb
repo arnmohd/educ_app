@@ -1,0 +1,23 @@
+<h1>Listing headers</h1>
+
+<table>
+  <tr>
+    <th>Heading</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @headers.each do |header| %>
+  <tr>
+  	
+    <td><%= link_to header.heading, show_topic_path(:course_id => header.course_id,:syllabus_id=> header.syllabus_id,:chapter_id=> header.chapter_id, :header_id=>header.id)%></td>
+  
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

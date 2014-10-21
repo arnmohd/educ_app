@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :heading %><br />
-    <%= f.text_field :heading %>
-  </div>
+  
   <div class="field">
     <%= f.label :content %><br />
     <%= f.text_area :content %>
@@ -30,6 +27,10 @@
   <div class="field">
     <%= f.label :chapter_id %><br />
     <%= f.number_field :chapter_id %>
+  </div>
+   <div class="field">
+    <%= f.label :header_id %><br />
+    <%= f.number_field :header_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

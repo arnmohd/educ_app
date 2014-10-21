@@ -1,0 +1,19 @@
+<h1>Listing Courses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+    
+  <tr>
+    <td> <%= link_to  course.name ,show_subjects_path(:course_id => course.id) %></td>
+                                                       
+  </tr>
+<% end %>
+</table>
+
