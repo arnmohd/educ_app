@@ -1,0 +1,32 @@
+<% if current_user %>
+	<p style = "padding-left: 75%;">
+    Logged in as <%= current_user.name %>.
+    <%= link_to "Sign Out", sign_out_path %>
+    </p>
+ <% end %>
+  <p style = "padding-left: 75%;">
+    <%= link_to "Back", show_courses_path %>
+    </p> 
+ <center>
+  <p>
+  <%= link_to "Courses Master", courses_path    %> 
+  </p> 
+  <p>
+  <%= link_to 'Subjects Master', syllabuses_path %> 
+  </p>
+  <p>
+  <%= link_to 'Syllabus Master', chapters_path   %> 
+  </p> 
+  <p>
+  <%= link_to 'Headers Master', headers_path    %> 
+  </p>
+  <p>
+  <%= link_to 'Topics Master', topics_path    %> 
+   </p>
+   <p>
+  <%= link_to 'Users Master', users_path    %> 
+   </p>
+   <p>
+  <%= link_to 'Roles Master', roles_path    %> 
+   </p>
+ </center>   

@@ -10,14 +10,15 @@ class UsersController < ApplicationController
    email       = params[:user][:email]
    password    = params[:user][:password]
    user = User.find_by_email(email)
-         if user && (user.password == password)
-          redirect_to  :show_courses
+         if  user && (user.password == password)
+             session[:user_id] = user.id
+             redirect_to  :show_courses
          else 
-            redirect_to :sign_in
+             redirect_to :sign_in
          end
    end
    
-   def register_user
+  def register_user
     @user = User.new
   end
 
@@ -31,7 +32,9 @@ class UsersController < ApplicationController
       end
    end
    
-
+  def sign_out
+    redirect_to :root 
+  end
  
   def index
     @users = User.all

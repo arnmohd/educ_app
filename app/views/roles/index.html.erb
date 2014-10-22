@@ -1,4 +1,15 @@
-<h1>Listing roles</h1>
+<% if current_user %>
+	<p style = "padding-left: 75%;">
+    Logged in as <%= current_user.name %>.
+    <%= link_to "Sign Out", sign_out_path %>
+    </p>
+ <% end %>
+    <p style = "padding-left: 75%;">
+    <%= link_to "Back", show_masters_path %>
+    </p> 
+    
+<center>
+<h2>Listing roles</h2>
 
 <table>
   <tr>
@@ -21,3 +32,4 @@
 <br />
 
 <%= link_to 'New Role', new_role_path %>
+</center>

@@ -21,8 +21,9 @@ EducApp::Application.routes.draw do
   
   root :to=>"home#index"
   
-  get "sign_in" => "users#sign_in"
+  get  "sign_in" => "users#sign_in"
   post "sign_in" => "users#login"
+  get  "sign_out" => "users#sign_out"
   get  "register_user" => "users#register_user"
   post "register_user" => "users#register"
   
@@ -31,6 +32,9 @@ EducApp::Application.routes.draw do
   get "show_syllabus" => "chapters#show_syllabus"
   get "show_headers"  =>  "headers#show_headers"
   get "show_topic"    => "topics#show_topic"  
+  get "update_topic"  => "topics#update_topic" 
+  put "update_topic"  => "topics#update_content"  
+  get "show_masters"  => "users#show_masters"
   
  # match 'courses/:course_id/syllabuses' => 'syllabuses#show_subjects'
  

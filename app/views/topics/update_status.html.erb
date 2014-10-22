@@ -1,0 +1,20 @@
+<% if current_user %>
+	<p style = "padding-left: 75%;">
+    Logged in as <%= current_user.name %>.
+    <%= link_to "Sign Out", sign_out_path %>
+    </p>
+    <% end %>
+<center>
+<div>
+<p style="padding-top: 10%;color:blue;">
+'Successfully Updated the Topic'
+</p>	
+<% course_id =    params[:topic][:course_id]     %>	
+<% syllabus_id =  params[:topic][:syllabus_id]   %> 
+<% chapter_id =   params[:topic][:chapter_id]    %>  
+<% header_id =    params[:topic][:header_id]     %>     
+	
+<%= link_to "Back", show_topic_path(:course_id => course_id,:syllabus_id=> syllabus_id,:chapter_id=> chapter_id, :header_id=>header_id)%>
+  
+</div>
+</center>

@@ -1,20 +1,15 @@
+<% if current_user %>
+	<p style = "padding-left: 75%;">
+    Logged in as <%= current_user.name %>.
+    <%= link_to "Sign Out", sign_out_path %>
+    </p>
+    <% end %>
 <center>
-<%= form_for(@topic) do |f| %>
-  <% if @topic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
-
-      <ul>
-      <% @topic.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_for @topic, :as => :topic, :url => update_topic_path, :method => :put do |f| %>
   
+   
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :Content %><br />
     <%= f.text_area :content %>
   </div>
   <div class="field">
@@ -33,8 +28,10 @@
     <%= f.label :header_id %><br />
     <%= f.number_field :header_id %>
   </div>
+    <%= f.hidden_field :id %>
   <div class="actions">
-    <%= f.submit %>
+  	
+    <%= f.submit 'Update' %>
   </div>
 <% end %>
 </center>

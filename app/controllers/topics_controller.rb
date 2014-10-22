@@ -46,6 +46,26 @@ class TopicsController < ApplicationController
   def edit
     @topic = Topic.find(params[:id])
   end
+  
+  def update_topic
+    @topic = Topic.find(params[:id])
+  end
+  
+  def update_content
+    
+   @topic = Topic.find(params[:topic][:id])
+   
+   
+
+    
+      if @topic.update_attributes(params[:topic])
+        render "update_status"
+      else
+        redirect_to :update_topic
+      end
+    
+  
+  end
 
   # POST /topics
   # POST /topics.json

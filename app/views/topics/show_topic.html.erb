@@ -1,3 +1,13 @@
+<% if current_user %>
+	<p style = "padding-left: 75%;">
+    Logged in as <%= current_user.name %>.
+    <%= link_to "Sign Out", sign_out_path %>
+    </p>
+    <% end %>
+    <p style = "padding-left: 75%;">
+    	<%= link_to 'Back', show_headers_path %>
+    </p>
+    	   
 <center>
 <h3><%=@course.name %> </h3>
 <p></p>
@@ -10,18 +20,19 @@
 <p></p>
 <div style="padding-top:3%;">
 <table>
-  
-
-<% @topics.each do |topic| %>
+ <% @topics.each do |topic| %>
   <tr>
     
-    <td><%= topic.content %></td>
-    
-  </tr>
-<% end %>
+    <td><%=  topic.content %></td>
+          <% if current_user && current_user.role_id == 1 %>
+           <td> <%= link_to "Edit", update_topic_path(:id=>topic.id)%></td>
+          <% end %>
+  </tr> 
+  
+  <%end %>
 </table>
+</div>
 </center>
-<br />
 
 
 
