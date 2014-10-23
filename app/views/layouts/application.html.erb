@@ -10,8 +10,12 @@
 	<center>
 	<h1>Annai Arts & Science College</h1>
 	<h2>Mugappair - Chennai</h2>
-    </center>
-<%= yield %>
-
-</body>
+        <%= yield %>
+	    <div style="color: red;">
+        <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+        </div>
+ </body>
+</center>
 </html>

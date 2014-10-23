@@ -62,6 +62,7 @@ class TopicsController < ApplicationController
     if @topic.update_attributes(params[:topic])
         render "update_status"
       else
+        flash[:notice]="Update not Successfull"
         redirect_to :update_topic
       end
     

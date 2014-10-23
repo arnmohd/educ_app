@@ -1,3 +1,14 @@
+ <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <p style = "padding-left: 75%;">
 <%= link_to "Home", root_path %>
 </p>
@@ -7,21 +18,26 @@
 </div>
 <div style="padding-top: 5%">
 <%= form_for @user, :as => :user, :url => register_user_path do |f| %>
+
    <div class="field">
     <%= f.label :Username %>
     <%= f.text_field :name %>
+    
   </div>
   <div class="field">
     <%= f.label :email %>
     <%= f.text_field :email %>
+   
   </div>
   <div class="field">
     <%= f.label :password %>
     <%= f.password_field :password %>
+    
   </div>
   <div class="field">
-    <%= f.label :role_id %>
-    <%= f.number_field :role_id %>
+    <%= f.label :role_id %> 
+    <%= f.number_field :role_id %><br />
+    Role Id for Authorized User is 1, Others 2
   </div>
   <div class="actions">
       <%= f.submit 'Sign Up' %>&nbsp;&nbsp;&nbsp;

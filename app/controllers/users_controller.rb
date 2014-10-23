@@ -14,7 +14,8 @@ class UsersController < ApplicationController
              session[:user_id] = user.id
              redirect_to  :show_courses
          else 
-             redirect_to :sign_in
+              flash[:notice] = 'Invalid email/password combination.'
+              redirect_to :sign_in
          end
    end
    
@@ -27,8 +28,12 @@ class UsersController < ApplicationController
       if @user.save
          redirect_to :sign_in
       else
-         redirect_to :register_user
-         
+               respond_to do |format|
+                    format.html { render action: "register_user" } 
+                    format.json { render json: @user.errors, status: :unprocessable_entity }
+               end
+         #flash[:notice] = 'Your registaration process has failed.Please try again'
+         #redirect_to :register_user
       end
    end
    
