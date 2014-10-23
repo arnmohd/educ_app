@@ -5,6 +5,8 @@ class ChaptersController < ApplicationController
   def show_syllabus
      @course = Course.find(params[:course_id])
      @syllabus = Syllabus.find(params[:syllabus_id])
+     session[:course_id] = params[:course_id]
+     session[:syllabus_id] = params[:syllabus_id]
      @chapters = Chapter.where(course_id: @course.id, syllabus_id: @syllabus.id)
   end
   

@@ -7,6 +7,10 @@ class TopicsController < ApplicationController
      @syllabus =    Syllabus.find(params[:syllabus_id])
      @chapter  =    Chapter.find(params[:chapter_id])
      @header   =    Header.find(params[:header_id])
+     session[:course_id]   =  params[:course_id]
+     session[:syllabus_id] =  params[:syllabus_id]
+     session[:chapter_id]  =  params[:chapter_id]
+     session[:header_id]   =  params[:header_id]
      @topics    =   Topic.where(course_id: @course.id, syllabus_id: @syllabus.id, chapter_id: @chapter.id, header_id: @header.id)
   end
   
@@ -55,10 +59,7 @@ class TopicsController < ApplicationController
     
    @topic = Topic.find(params[:topic][:id])
    
-   
-
-    
-      if @topic.update_attributes(params[:topic])
+    if @topic.update_attributes(params[:topic])
         render "update_status"
       else
         redirect_to :update_topic

@@ -4,6 +4,7 @@ class SyllabusesController < ApplicationController
   
    def show_subjects
        @course = Course.find(params[:course_id])
+       session[:course_id] = params[:course_id]
        @syllabuses = Syllabus.where(course_id: @course.id)
    end
   

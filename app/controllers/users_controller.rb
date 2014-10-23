@@ -33,6 +33,10 @@ class UsersController < ApplicationController
    end
    
   def sign_out
+     session[:course_id]    =  nil
+     session[:syllabus_id] =  nil
+     session[:chapter_id]  =  nil
+     session[:header_id]   =  nil
     redirect_to :root 
   end
  

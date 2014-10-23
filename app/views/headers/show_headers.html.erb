@@ -5,7 +5,7 @@
     </p>
     <% end %>
     <p style = "padding-left: 75%;">
-    	<%= link_to 'Back', show_syllabus_path %>
+    	<%= link_to 'Back', show_syllabus_path(:course_id => (session[:course_id]),:syllabus_id => (session[:syllabus_id])) %>
     </p>
     	   
 <center>

@@ -6,6 +6,9 @@ class HeadersController < ApplicationController
      @course =    Course.find(params[:course_id])
      @syllabus =  Syllabus.find(params[:syllabus_id])
      @chapter =   Chapter.find(params[:chapter_id])
+     session[:course_id]   = params[:course_id]
+     session[:syllabus_id] = params[:syllabus_id]
+     session[:chapter_id]  = params[:chapter_id]
      @headers =   Header.where(course_id: @course.id, syllabus_id: @syllabus.id, chapter_id: @chapter.id)
   end
   def index

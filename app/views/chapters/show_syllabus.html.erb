@@ -5,7 +5,7 @@
     </p>
     <% end %>
     <p style = "padding-left: 75%;">
-    	<%= link_to 'Back', show_subjects_path %>
+    	<%= link_to 'Back', show_subjects_path(:course_id => (session[:course_id])) %>
     </p>
     	   
 <center>
