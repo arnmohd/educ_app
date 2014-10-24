@@ -10,7 +10,7 @@ class UsersController < ApplicationController
    email       = params[:user][:email]
    password    = params[:user][:password]
    user = User.find_by_email(email)
-         if  user && (user.password == password)
+         if  user && user.authenticate(params[:user][:password])
              session[:user_id] = user.id
              redirect_to  :show_courses
          else 

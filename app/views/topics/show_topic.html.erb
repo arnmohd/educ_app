@@ -25,7 +25,9 @@
   	   <% if current_user && current_user.role_id == 1 %>
         <% session[:id]= topic.id %>
        <% end %> 
-    <td><%=  topic.content %></td>
+       
+       
+    <td style = "padding-left:5%;,padding-right:5%;"><%=  topic.content %></td>
           
   </tr> 
   

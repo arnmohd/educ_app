@@ -34,10 +34,14 @@
     <%= f.password_field :password %>
     
   </div>
+  </div>
   <div class="field">
-    <%= f.label :role_id %> 
-    <%= f.number_field :role_id %><br />
-    Role Id for Authorized User is 1, Others 2
+    <%= f.label :password_confrimation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+  <%= f.label :role_id %>	
+  <%= f.collection_select(:role_id, Role.all, :id , :description) %>
   </div>
   <div class="actions">
       <%= f.submit 'Sign Up' %>&nbsp;&nbsp;&nbsp;

@@ -137,7 +137,7 @@ margin-right: 10px;
 }
 
 /* forms */
-input, textarea, select, .uneditable-input {
+input, select, textarea,.uneditable-input {
 border: 1px solid #bbb;
 
 padding: 10px;
@@ -145,6 +145,8 @@ height: auto;
 margin-bottom: 15px;
 @include box_sizing;
 }
+
+
 
 #error_explanation {
 color: #f00;

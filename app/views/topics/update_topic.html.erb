@@ -10,34 +10,31 @@
     </p>
  
 <center>
-	
+<h3><%=@course.name %> </h3>
+<p></p>
+<h3>Subject: <%=@syllabus.name %> </h3>
+<p></p>
+<h3> Syllabus for - <%=@chapter.name %> </h3>
+<p></p>
+<h3> <%=@header.heading %> </h3>
+<p></p>
+<p></p>
+
 <%= form_for @topic, :as => :topic, :url => update_topic_path, :method => :put do |f| %>
   
    
   <div class="field">
     <%= f.label :Content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content ,  :class => "input-xxlarge"  %>
   </div>
-  <div class="field">
-    <%= f.label :course_id %><br />
-    <%= f.number_field :course_id %>
-  </div>
-  <div class="field">
-    <%= f.label :syllabus_id %><br />
-    <%= f.number_field :syllabus_id %>
-  </div>
-  <div class="field">
-    <%= f.label :chapter_id %><br />
-    <%= f.number_field :chapter_id %>
-  </div>
-   <div class="field">
-    <%= f.label :header_id %><br />
-    <%= f.number_field :header_id %>
-  </div>
-    <%= f.hidden_field :id %>
+   <%= f.hidden_field :id %>
+   <%= f.hidden_field :course_id %>
+   <%= f.hidden_field :syllabus_id %>
+   <%= f.hidden_field :chapter_id %>
+   <%= f.hidden_field :header_id %>
+  
   <div class="actions">
-  	
-    <%= f.submit 'Update' %>
+  	<%= f.submit 'Update' %>
   </div>
 <% end %>
 </center>

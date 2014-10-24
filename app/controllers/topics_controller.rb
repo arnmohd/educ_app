@@ -52,12 +52,17 @@ class TopicsController < ApplicationController
   end
   
   def update_topic
-    @topic = Topic.find(params[:id])
+    @topic    = Topic.find(params[:id])
+    @course   = Course.find(@topic.course_id)
+    @syllabus = Syllabus.find(@topic.syllabus_id)
+    @chapter  = Chapter.find(@topic.chapter_id)
+    @header   = Header.find(@topic.header_id)
   end
   
   def update_content
     
    @topic = Topic.find(params[:topic][:id])
+   
    
     if @topic.update_attributes(params[:topic])
         render "update_status"
