@@ -16,16 +16,21 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :syllabus_id %><br />
-    <%= f.number_field :syllabus_id %>
-  </div>
+  
+  
+  
   <div class="field">
     <%= f.label :course_id %><br />
-    <%= f.number_field :course_id %>
+    <%= f.collection_select(:course_id, Course.all, :id , :name) %>
   </div>
+  
+  <div class="field">
+    <%= f.label :Subject %><br />
+    <%= f.collection_select(:syllabus_id, Syllabus.all, :id , :name)%>
+  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Syllabus"%>
   </div>
 <% end %>
 </center>

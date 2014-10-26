@@ -15,23 +15,23 @@
   
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => "input-xxlarge" %>
   </div>
   <div class="field">
     <%= f.label :course_id %><br />
-    <%= f.number_field :course_id %>
+    <%= f.collection_select(:course_id, Course.all, :id , :name) %>
   </div>
   <div class="field">
-    <%= f.label :syllabus_id %><br />
-    <%= f.number_field :syllabus_id %>
+    <%= f.label :Subject %><br />
+    <%= f.collection_select(:syllabus_id, Syllabus.all, :id , :name) %> 
   </div>
   <div class="field">
-    <%= f.label :chapter_id %><br />
-    <%= f.number_field :chapter_id %>
+    <%= f.label :Syllabus %><br />
+    <%= f.collection_select(:chapter_id, Chapter.all, :id , :name) %>  
   </div>
    <div class="field">
     <%= f.label :header_id %><br />
-    <%= f.number_field :header_id %>
+    <%= f.collection_select(:header_id, Header.all, :id , :heading) %> 
   </div>
   <div class="actions">
     <%= f.submit %>
