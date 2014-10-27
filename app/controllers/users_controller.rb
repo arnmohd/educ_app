@@ -12,6 +12,8 @@ class UsersController < ApplicationController
    user = User.find_by_email(email)
          if  user && user.authenticate(params[:user][:password])
              session[:user_id] = user.id
+             role = Role.find(user.role_id)
+             session[:role_description]= role.description
              redirect_to  :show_courses
          else 
               flash[:notice] = 'Invalid email/password combination.'
@@ -42,6 +44,7 @@ class UsersController < ApplicationController
      session[:syllabus_id] =  nil
      session[:chapter_id]  =  nil
      session[:header_id]   =  nil
+     session[:role_description] = nil
     redirect_to :root 
   end
  
