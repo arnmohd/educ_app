@@ -35,7 +35,7 @@
 </table>
 </center>
 
-<p>
+<p style = "position:fixed;top: 210px;padding-left:80%;">
 <% if current_user && ((session[:role_description] == 'Teacher') || (session[:role_description] == 'Professor')) %> 
             <%= link_to "Edit", update_topic_path(:id=>(session[:id]))%>
 <% end %>
